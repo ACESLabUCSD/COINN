@@ -8,8 +8,8 @@ Run the following commands. Be sure to replace ```NETWORK``` with one of the fou
 - ```cd bash_files/NETWORK/server```
 - ```bash commands.sh```
 - open another terminal, cd to the COINN directory
-- ```cd bash_files/NETWORK/client > ../../../timing_reports/NETWORK.txt```
-- ```bash commands.sh```
+- ```cd bash_files/NETWORK/client```
+- ```bash commands.sh > ../../../timing_reports/NETWORK.txt```
 - The script will run, and layer-wise runtimes will be written to ```timing_reports/NETWORK.txt```.
 ## summarizing runtimes
 after running all networks, run the following to summarize the runtimes:
