@@ -12,7 +12,8 @@ cd home/_COINN_
 ## Download necessary files
 inside ``/home/_COINN_``, clone the COINN repository:
 ```bash
-git clone git@github.com:ACESLabUCSD/COINN.git
+git clone https://github.com/ACESLabUCSD/COINN.git
+cp -rf COINN/bash_files .
 ```
 A folder named ``bash_files`` will appear, which contains the commands needed to run for each neural network benchmark in the paper.
 
