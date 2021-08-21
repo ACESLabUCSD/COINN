@@ -49,7 +49,7 @@ In the `client` terminal, run
 
 ```bash
 cd bash_files/NETWORK/client
-bash commands_setup.sh > ../../../timing_reports/NETWORK.txt # the first time inference is run
+bash commands_setup.sh > ../../../timing_reports/<NETWORK>.txt # the first time inference is run
 bash commands.sh > ../../../timing_reports/<NETWORK>.txt # from the second time on
 ```
 
