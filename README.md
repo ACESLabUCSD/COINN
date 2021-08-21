@@ -6,19 +6,25 @@ simulate latency and bandwidth by running ```bash simulate_lan.sh``` or ```bash 
 download files [here](https://drive.google.com/file/d/1ow3WqRm4FYok2Kxgq4Ob8wWNLVgZxJPI/view?usp=sharing) and extract them.
 ## setting up docker container
 download the docker container (siam please put instructions)
+
 copy the bash_files into the docker container:
+
 ```docker cp bash_files coinn:/home/_COINN_/```
+
 ## starting the docker container
 ```docker container start coinn```
+
 ```docker container attach coinn```
+
 once attached to the docker:
+
 ```cd home/_COINN_```
 
 ## splitting the terminal
 use tmux to split the teminal in two as follows:
 - run ```tmux```
-- press ```ctrl+b```, then ```shift+" (quotation mark)```. the terminal will be split in two.
-- press ```ctrl+b```, then ```up``` or ```down``` to navigate between each splitted terminal
+- press ```ctrl+b```, then ```shift+quotation mark (")```. the terminal will be split in two.
+- press ```ctrl+b```, then ```up``` or ```down``` to navigate between splitted terminals
 
 
 ## running oblivious inference
