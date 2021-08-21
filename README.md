@@ -1,3 +1,4 @@
+
 # COINN: Crypto/ML Codesign for Oblivious Inference via Neural Networks
 This repo contains the executables for benchmarking the runtime for oblivious inference through COINN. The executable is run inside a [docker](https://www.docker.com/).
 
@@ -8,15 +9,21 @@ docker run -it --cap-add=NET_ADMIN ubuntu18.04-coinn /bin/bash
 cd home/_COINN_
 ```
 
+## Download necessary files
+inside ``/home/_COINN_``, clone the COINN repository:
+```bash
+git clone git@github.com:ACESLabUCSD/COINN.git
+```
+A folder named ``bash_files`` will appear, which contains the commands needed to run for each neural network benchmark in the paper.
+
 ## Simulate LAN and WAN bandwidth
 ```bash
 bash simulate_lan.sh # LAN
 bash simulate_wan.sh # WAN
 ```
 
-## Download files (@Moahmmad: description of the files)
-Download files from [here](https://drive.google.com/file/d/1ow3WqRm4FYok2Kxgq4Ob8wWNLVgZxJPI/view?usp=sharing) and extract them.
-@Moahmmad: download commands with `wget` and `cp`?
+
+
 
 ## Split the terminal to run `server` and `client`
 Use tmux to split the teminal in two as follows:
