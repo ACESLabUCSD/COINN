@@ -18,6 +18,7 @@ cp -rf COINN/bash_files .
 A folder named ``bash_files`` will appear, which contains the commands needed to run for each neural network benchmark in the paper.
 
 ## Simulate LAN and WAN bandwidth
+Run one of the follwing commands to simulate LAN or WAN bandwidth on `localhost`
 ```bash
 bash simulate_lan.sh # LAN
 bash simulate_wan.sh # WAN
