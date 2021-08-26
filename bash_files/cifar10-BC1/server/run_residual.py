@@ -27,5 +27,5 @@ y = np.loadtxt(args.y_path)
 x = x*args.multiplier
 x = overflow(x, args.num_bits_act)
 y = overflow(y+x, args.num_bits_act)
-np.savetxt(args.out_path, y)
+np.savetxt(args.out_path, y, fmt='%d', delimiter='\n', newline='\n')
 

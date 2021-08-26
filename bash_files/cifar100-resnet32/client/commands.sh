@@ -35,7 +35,7 @@ $onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 10 --br 5 --sup  -k 2 -t 4 --dir 
 cp $files_path/layer-5-BasicBlock/RELU1/layer_5_OutputB.txt $files_path/layer-5-BasicBlock/CONV2/layer_5_InputB.txt
 $onni_path/bin/onni -f 1 --bins 3 -i 16 -o 16 -w 32 -g 3 --ba 16 -z 1 --stride 1 --sup  -k 2 -t 4 --dir $files_path/layer-5-BasicBlock/CONV2/ --layerid 5
 python3 run_residual.py --multiplier 64 --num_bits_act 16 --x_path $files_path/layer-5-BasicBlock/CONV1/layer_5_InputB.txt --y_path $files_path/layer-5-BasicBlock/CONV2/layer_5_OutputB.txt --out_path $files_path/layer-5-BasicBlock/RELU2/layer_5_InputB.txt
-$onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 9 --br 7 --sup  -k 2 -t 4 --dir $files_path/layer-5-BasicBlock/RELU2/ --layerid 5
+$onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 8 --br 8 --sup  -k 2 -t 4 --dir $files_path/layer-5-BasicBlock/RELU2/ --layerid 5
 cp $files_path/layer-5-BasicBlock/RELU2/layer_5_OutputB.txt $files_path/layer-6-BasicBlock/CONV1/layer_6_InputB.txt
 $onni_path/bin/onni -f 1 --bins 11 -i 16 -o 16 -w 32 -g 3 --ba 16 -z 1 --stride 1 --sup  -k 2 -t 4 --dir $files_path/layer-6-BasicBlock/CONV1/ --layerid 6
 cp $files_path/layer-6-BasicBlock/CONV1/layer_6_OutputB.txt $files_path/layer-6-BasicBlock/RELU1/layer_6_InputB.txt
@@ -43,7 +43,7 @@ $onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 10 --br 4 --sup  -k 2 -t 4 --dir 
 cp $files_path/layer-6-BasicBlock/RELU1/layer_6_OutputB.txt $files_path/layer-6-BasicBlock/CONV2/layer_6_InputB.txt
 $onni_path/bin/onni -f 1 --bins 10 -i 16 -o 16 -w 32 -g 3 --ba 16 -z 1 --stride 1 --sup  -k 2 -t 4 --dir $files_path/layer-6-BasicBlock/CONV2/ --layerid 6
 python3 run_residual.py --multiplier 64 --num_bits_act 16 --x_path $files_path/layer-6-BasicBlock/CONV1/layer_6_InputB.txt --y_path $files_path/layer-6-BasicBlock/CONV2/layer_6_OutputB.txt --out_path $files_path/layer-6-BasicBlock/RELU2/layer_6_InputB.txt
-$onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 9 --br 6 --sup  -k 2 -t 4 --dir $files_path/layer-6-BasicBlock/RELU2/ --layerid 6
+$onni_path/bin/onni -f 2 -i 16 -w 32 -g 1 --ba 10 --br 5 --sup  -k 2 -t 4 --dir $files_path/layer-6-BasicBlock/RELU2/ --layerid 6
 cp $files_path/layer-6-BasicBlock/RELU2/layer_6_OutputB.txt $files_path/layer-7-BasicBlock/CONV1/layer_7_InputB.txt
 $onni_path/bin/onni -f 4 --bw 16 -i 16 -o 32 -w 32 -g 3 --ba 16 -z 1 --stride 2 --sup  -k 2 -t 4 --dir $files_path/layer-7-BasicBlock/CONV1/ --layerid 7
 cp $files_path/layer-7-BasicBlock/CONV1/layer_7_OutputB.txt $files_path/layer-7-BasicBlock/RELU1/layer_7_InputB.txt
@@ -129,6 +129,8 @@ cp $files_path/layer-16-BasicBlock/RELU1/layer_16_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 8 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup  -k 2 -t 4 --dir $files_path/layer-16-BasicBlock/CONV2/ --layerid 16
 python3 run_residual.py --multiplier 16 --num_bits_act 16 --x_path $files_path/layer-16-BasicBlock/CONV1/layer_16_InputB.txt --y_path $files_path/layer-16-BasicBlock/CONV2/layer_16_OutputB.txt --out_path $files_path/layer-16-BasicBlock/RELU2/layer_16_InputB.txt
 $onni_path/bin/onni -f 2 -i 64 -w 8 -g 1 --ba 8 --br 5 --sup  -k 2 -t 4 --dir $files_path/layer-16-BasicBlock/RELU2/ --layerid 16
-cp $files_path/layer-16-BasicBlock/RELU2/layer_16_OutputB.txt $files_path/layer-17-LINEAR/layer_17_InputB.txt
-python3 run_sum_pool.py --path $files_path/layer-17-LINEAR/layer_17_InputB.txt --channels 64 --width 8
-$onni_path/bin/onni -f 4 --bw 16 -i 64 -o 100 -w 1 -g 1 --ba 16 -z 0 --sup  -k 2 -t 4 --dir $files_path/layer-17-LINEAR/ --layerid 17
+cp $files_path/layer-16-BasicBlock/RELU2/layer_16_OutputB.txt $files_path/layer-17-SUMPOOL2D/layer_17_InputB.txt
+python3 run_sum_pool.py --path $files_path/layer-17-SUMPOOL2D/layer_17_InputB.txt --num_bits 16 --channels 64 --width 8
+$onni_path/bin/onni -f 2 -i 64 -w 1 -g 1 --ba 8 --br 6 --sup  -k 2 -t 4 --dir $files_path/layer-17-SUMPOOL2D/ --layerid 17
+cp $files_path/layer-17-SUMPOOL2D/layer_17_OutputB.txt $files_path/layer-18-LINEAR/layer_18_InputB.txt
+$onni_path/bin/onni -f 4 --bw 16 -i 64 -o 100 -w 1 -g 1 --ba 16 -z 0 --sup  -k 2 -t 4 --dir $files_path/layer-18-LINEAR/ --layerid 18

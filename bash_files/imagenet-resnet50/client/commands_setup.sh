@@ -119,7 +119,7 @@ cp $files_path/layer-10-Bottleneck/RELU2/layer_10_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 10 -i 256 -o 1024 -w 14 -g 1 --ba 16 -z 0 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-10-Bottleneck/CONV3/ --layerid 10
 cp $files_path/layer-10-Bottleneck/CONV3/layer_10_OutputB.txt $files_path/layer-10-Bottleneck/RELU3/layer_10_InputB.txt
 cp $files_path/layer-10-Bottleneck/CONV1/layer_10_InputB.txt $files_path/layer-10-Bottleneck/RELU3/layer_10_InputRB.txt
-$onni_path/bin/onni -f 6 -i 1024 -w 14 -g 1 --ba 9 --br 7 --bs 9 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-10-Bottleneck/RELU3/ --layerid 10
+$onni_path/bin/onni -f 6 -i 1024 -w 14 -g 1 --ba 8 --br 8 --bs 9 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-10-Bottleneck/RELU3/ --layerid 10
 cp $files_path/layer-10-Bottleneck/RELU3/layer_10_OutputB.txt $files_path/layer-11-Bottleneck/CONV1/layer_11_InputB.txt
 $onni_path/bin/onni -f 4 --bw 16 -i 1024 -o 256 -w 14 -g 1 --ba 16 -z 0 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-11-Bottleneck/CONV1/ --layerid 11
 cp $files_path/layer-11-Bottleneck/CONV1/layer_11_OutputB.txt $files_path/layer-11-Bottleneck/RELU1/layer_11_InputB.txt
@@ -197,7 +197,7 @@ $onni_path/bin/onni -f 2 -i 512 -w 7 -g 1 --ba 9 --br 7 --sup --setup -k 2 -t 4 
 cp $files_path/layer-16-Bottleneck/RELU2/layer_16_OutputB.txt $files_path/layer-16-Bottleneck/CONV3/layer_16_InputB.txt
 $onni_path/bin/onni -f 1 --bins 14 -i 512 -o 2048 -w 7 -g 1 --ba 16 -z 0 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-16-Bottleneck/CONV3/ --layerid 16
 python3 run_residual.py --multiplier 128 --num_bits_act 16 --x_path $files_path/layer-16-Bottleneck/CONV1/layer_16_InputB.txt --y_path $files_path/layer-16-Bottleneck/CONV3/layer_16_OutputB.txt --out_path $files_path/layer-16-Bottleneck/RELU3/layer_16_InputB.txt
-$onni_path/bin/onni -f 2 -i 2048 -w 7 -g 1 --ba 9 --br 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-16-Bottleneck/RELU3/ --layerid 16
+$onni_path/bin/onni -f 2 -i 2048 -w 7 -g 1 --ba 8 --br 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-16-Bottleneck/RELU3/ --layerid 16
 cp $files_path/layer-16-Bottleneck/RELU3/layer_16_OutputB.txt $files_path/layer-17-Bottleneck/CONV1/layer_17_InputB.txt
 $onni_path/bin/onni -f 1 --bins 9 -i 2048 -o 512 -w 7 -g 1 --ba 16 -z 0 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-17-Bottleneck/CONV1/ --layerid 17
 cp $files_path/layer-17-Bottleneck/CONV1/layer_17_OutputB.txt $files_path/layer-17-Bottleneck/RELU1/layer_17_InputB.txt
@@ -210,7 +210,9 @@ cp $files_path/layer-17-Bottleneck/RELU2/layer_17_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 8 -i 512 -o 2048 -w 7 -g 1 --ba 16 -z 0 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-17-Bottleneck/CONV3/ --layerid 17
 cp $files_path/layer-17-Bottleneck/CONV3/layer_17_OutputB.txt $files_path/layer-17-Bottleneck/RELU3/layer_17_InputB.txt
 cp $files_path/layer-17-Bottleneck/CONV1/layer_17_InputB.txt $files_path/layer-17-Bottleneck/RELU3/layer_17_InputRB.txt
-$onni_path/bin/onni -f 6 -i 2048 -w 7 -g 1 --ba 9 --br 7 --bs 9 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-17-Bottleneck/RELU3/ --layerid 17
-cp $files_path/layer-17-Bottleneck/RELU3/layer_17_OutputB.txt $files_path/layer-18-LINEAR/layer_18_InputB.txt
-python3 run_sum_pool.py --path $files_path/layer-18-LINEAR/layer_18_InputB.txt --channels 2048 --width 7
-$onni_path/bin/onni -f 4 --bw 16 -i 2048 -o 1000 -w 1 -g 1 --ba 16 -z 0 --sup --setup -k 2 -t 4 --dir $files_path/layer-18-LINEAR/ --layerid 18
+$onni_path/bin/onni -f 6 -i 2048 -w 7 -g 1 --ba 10 --br 6 --bs 9 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-17-Bottleneck/RELU3/ --layerid 17
+cp $files_path/layer-17-Bottleneck/RELU3/layer_17_OutputB.txt $files_path/layer-18-SUMPOOL2D/layer_18_InputB.txt
+python3 run_sum_pool.py --path $files_path/layer-18-SUMPOOL2D/layer_18_InputB.txt --num_bits 16 --channels 2048 --width 7
+$onni_path/bin/onni -f 2 -i 2048 -w 1 -g 1 --ba 9 --br 6 --sup --setup -k 2 -t 4 --dir $files_path/layer-18-SUMPOOL2D/ --layerid 18
+cp $files_path/layer-18-SUMPOOL2D/layer_18_OutputB.txt $files_path/layer-19-LINEAR/layer_19_InputB.txt
+$onni_path/bin/onni -f 4 --bw 16 -i 2048 -o 1000 -w 1 -g 1 --ba 16 -z 0 --sup --setup -k 2 -t 4 --dir $files_path/layer-19-LINEAR/ --layerid 19

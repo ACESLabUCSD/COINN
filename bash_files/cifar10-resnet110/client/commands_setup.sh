@@ -259,7 +259,7 @@ $onni_path/bin/onni -f 2 -i 32 -w 16 -g 1 --ba 10 --br 6 --sup --setup -k 2 -t 4
 cp $files_path/layer-30-BasicBlock/RELU1/layer_30_OutputB.txt $files_path/layer-30-BasicBlock/CONV2/layer_30_InputB.txt
 $onni_path/bin/onni -f 1 --bins 9 -i 32 -o 32 -w 16 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-30-BasicBlock/CONV2/ --layerid 30
 python3 run_residual.py --multiplier 64 --num_bits_act 16 --x_path $files_path/layer-30-BasicBlock/CONV1/layer_30_InputB.txt --y_path $files_path/layer-30-BasicBlock/CONV2/layer_30_OutputB.txt --out_path $files_path/layer-30-BasicBlock/RELU2/layer_30_InputB.txt
-$onni_path/bin/onni -f 2 -i 32 -w 16 -g 1 --ba 10 --br 6 --sup --setup -k 2 -t 4 --dir $files_path/layer-30-BasicBlock/RELU2/ --layerid 30
+$onni_path/bin/onni -f 2 -i 32 -w 16 -g 1 --ba 9 --br 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-30-BasicBlock/RELU2/ --layerid 30
 cp $files_path/layer-30-BasicBlock/RELU2/layer_30_OutputB.txt $files_path/layer-31-BasicBlock/CONV1/layer_31_InputB.txt
 $onni_path/bin/onni -f 1 --bins 7 -i 32 -o 32 -w 16 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-31-BasicBlock/CONV1/ --layerid 31
 cp $files_path/layer-31-BasicBlock/CONV1/layer_31_OutputB.txt $files_path/layer-31-BasicBlock/RELU1/layer_31_InputB.txt
@@ -392,7 +392,7 @@ cp $files_path/layer-45-BasicBlock/RELU1/layer_45_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 7 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-45-BasicBlock/CONV2/ --layerid 45
 cp $files_path/layer-45-BasicBlock/CONV2/layer_45_OutputB.txt $files_path/layer-45-BasicBlock/RELU2/layer_45_InputB.txt
 cp $files_path/layer-45-BasicBlock/CONV1/layer_45_InputB.txt $files_path/layer-45-BasicBlock/RELU2/layer_45_InputRB.txt
-$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 10 --br 6 --bs 10 --bl 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-45-BasicBlock/RELU2/ --layerid 45
+$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 9 --br 7 --bs 10 --bl 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-45-BasicBlock/RELU2/ --layerid 45
 cp $files_path/layer-45-BasicBlock/RELU2/layer_45_OutputB.txt $files_path/layer-46-BasicBlock/CONV1/layer_46_InputB.txt
 $onni_path/bin/onni -f 1 --bins 8 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-46-BasicBlock/CONV1/ --layerid 46
 cp $files_path/layer-46-BasicBlock/CONV1/layer_46_OutputB.txt $files_path/layer-46-BasicBlock/RELU1/layer_46_InputB.txt
@@ -454,7 +454,7 @@ cp $files_path/layer-52-BasicBlock/RELU1/layer_52_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 9 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-52-BasicBlock/CONV2/ --layerid 52
 cp $files_path/layer-52-BasicBlock/CONV2/layer_52_OutputB.txt $files_path/layer-52-BasicBlock/RELU2/layer_52_InputB.txt
 cp $files_path/layer-52-BasicBlock/CONV1/layer_52_InputB.txt $files_path/layer-52-BasicBlock/RELU2/layer_52_InputRB.txt
-$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 10 --br 6 --bs 10 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-52-BasicBlock/RELU2/ --layerid 52
+$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 9 --br 7 --bs 10 --bl 8 --sup --setup -k 2 -t 4 --dir $files_path/layer-52-BasicBlock/RELU2/ --layerid 52
 cp $files_path/layer-52-BasicBlock/RELU2/layer_52_OutputB.txt $files_path/layer-53-BasicBlock/CONV1/layer_53_InputB.txt
 $onni_path/bin/onni -f 1 --bins 8 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-53-BasicBlock/CONV1/ --layerid 53
 cp $files_path/layer-53-BasicBlock/CONV1/layer_53_OutputB.txt $files_path/layer-53-BasicBlock/RELU1/layer_53_InputB.txt
@@ -480,7 +480,9 @@ cp $files_path/layer-55-BasicBlock/RELU1/layer_55_OutputB.txt $files_path/layer-
 $onni_path/bin/onni -f 1 --bins 15 -i 64 -o 64 -w 8 -g 3 --ba 16 -z 1 --stride 1 --sup --setup -k 2 -t 4 --dir $files_path/layer-55-BasicBlock/CONV2/ --layerid 55
 cp $files_path/layer-55-BasicBlock/CONV2/layer_55_OutputB.txt $files_path/layer-55-BasicBlock/RELU2/layer_55_InputB.txt
 cp $files_path/layer-55-BasicBlock/CONV1/layer_55_InputB.txt $files_path/layer-55-BasicBlock/RELU2/layer_55_InputRB.txt
-$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 10 --br 5 --bs 10 --bl 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-55-BasicBlock/RELU2/ --layerid 55
-cp $files_path/layer-55-BasicBlock/RELU2/layer_55_OutputB.txt $files_path/layer-56-LINEAR/layer_56_InputB.txt
-python3 run_sum_pool.py --path $files_path/layer-56-LINEAR/layer_56_InputB.txt --channels 64 --width 8
-$onni_path/bin/onni -f 1 --bins 12 -i 64 -o 10 -w 1 -g 1 --ba 16 -z 0 --sup --setup -k 2 -t 2 --dir $files_path/layer-56-LINEAR/ --layerid 56
+$onni_path/bin/onni -f 6 -i 64 -w 8 -g 1 --ba 12 --br 3 --bs 10 --bl 7 --sup --setup -k 2 -t 4 --dir $files_path/layer-55-BasicBlock/RELU2/ --layerid 55
+cp $files_path/layer-55-BasicBlock/RELU2/layer_55_OutputB.txt $files_path/layer-56-SUMPOOL2D/layer_56_InputB.txt
+python3 run_sum_pool.py --path $files_path/layer-56-SUMPOOL2D/layer_56_InputB.txt --num_bits 16 --channels 64 --width 8
+$onni_path/bin/onni -f 2 -i 64 -w 1 -g 1 --ba 10 --br 6 --sup --setup -k 2 -t 4 --dir $files_path/layer-56-SUMPOOL2D/ --layerid 56
+cp $files_path/layer-56-SUMPOOL2D/layer_56_OutputB.txt $files_path/layer-57-LINEAR/layer_57_InputB.txt
+$onni_path/bin/onni -f 1 --bins 12 -i 64 -o 10 -w 1 -g 1 --ba 16 -z 0 --sup --setup -k 2 -t 2 --dir $files_path/layer-57-LINEAR/ --layerid 57
