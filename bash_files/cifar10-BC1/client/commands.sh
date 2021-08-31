@@ -31,3 +31,5 @@ $onni_path/bin/onni -f 2 -i 16 -w 8 -g 1 --ba 7 --br 8 --sup  -k 2 -t 4 --dir $f
 cp $files_path/layer-13-RELU/layer_13_OutputB.txt $files_path/layer-14-LINEAR/layer_14_InputB.txt
 python3 run_flatten.py --path $files_path/layer-14-LINEAR/layer_14_InputB.txt --channels 16 --width 8
 $onni_path/bin/onni -f 1 --bins 9 -i 1024 -o 10 -w 1 -g 1 --ba 16 -z 0 --sup  -k 2 -t 2 --dir $files_path/layer-14-LINEAR/ --layerid 14
+cp $files_path/layer-14-LINEAR/layer_14_OutputB.txt $files_path/layer-15-ARGMAX/layer_15_InputB.txt
+$onni_path/bin/onni -f 7 -e 10 --sup  -k 2 -t 1 --dir $files_path/layer-15-ARGMAX/ --layerid 15

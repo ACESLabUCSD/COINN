@@ -134,3 +134,5 @@ python3 run_sum_pool.py --path $files_path/layer-17-SUMPOOL2D/layer_17_InputB.tx
 $onni_path/bin/onni -f 2 -i 64 -w 1 -g 1 --ba 8 --br 6 --sup --setup -k 2 -t 4 --dir $files_path/layer-17-SUMPOOL2D/ --layerid 17
 cp $files_path/layer-17-SUMPOOL2D/layer_17_OutputB.txt $files_path/layer-18-LINEAR/layer_18_InputB.txt
 $onni_path/bin/onni -f 4 --bw 16 -i 64 -o 100 -w 1 -g 1 --ba 16 -z 0 --sup --setup -k 2 -t 4 --dir $files_path/layer-18-LINEAR/ --layerid 18
+cp $files_path/layer-18-LINEAR/layer_18_OutputB.txt $files_path/layer-19-ARGMAX/layer_19_InputB.txt
+$onni_path/bin/onni -f 7 -e 100 --sup --setup -k 2 -t 1 --dir $files_path/layer-19-ARGMAX/ --layerid 19
